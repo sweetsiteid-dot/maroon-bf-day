@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Boyfriend Day - Akbar</title>
+  <title>Happy Boyfriend Day - Akbar & Deandra</title>
   
   <!-- Font Premium Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Sacramento&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --bg-gradient: linear-gradient(135deg, #1a0307 0%, #38080f 50%, #100204 100%);
-      --maroon-card: rgba(56, 8, 15, 0.65);
+      --bg-gradient: linear-gradient(180deg, #120104 0%, #2b060d 30%, #1c0206 70%, #0d0002 100%);
+      --maroon-card: rgba(48, 6, 13, 0.65);
       --maroon-border: rgba(212, 175, 55, 0.35);
       --gold-accent: linear-gradient(135deg, #ffe082 0%, #d4af37 50%, #aa7c11 100%);
       --gold-text: #e8c872;
@@ -38,30 +38,27 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
-      overflow-x: hidden;
-      position: relative;
-      padding: 20px 0;
+      align-items: flex-start;
+      padding: 30px 12px;
     }
 
     /* Ambient Glow Effects */
     .glow-orb {
       position: fixed;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(128, 0, 32, 0.4) 0%, rgba(0,0,0,0) 70%);
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(140, 10, 35, 0.35) 0%, rgba(0,0,0,0) 70%);
       border-radius: 50%;
       z-index: 0;
       pointer-events: none;
     }
-    .glow-1 { top: -50px; left: -50px; }
-    .glow-2 { bottom: -50px; right: -50px; }
+    .glow-1 { top: -60px; left: -60px; }
+    .glow-2 { bottom: 10%; right: -60px; }
 
-    /* Screen Wrappers */
+    /* Container Screen */
     .screen {
       width: 100%;
-      max-width: 450px;
-      padding: 16px;
+      max-width: 460px;
       z-index: 1;
       display: flex;
       flex-direction: column;
@@ -70,23 +67,20 @@
     }
 
     .hidden {
-      opacity: 0;
-      pointer-events: none;
-      transform: scale(0.95);
-      position: absolute;
+      display: none !important;
     }
 
     /* Glass Card Style */
     .glass-card {
       background: var(--maroon-card);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       border: 1px solid var(--maroon-border);
       border-radius: 28px;
       padding: 28px 20px;
       width: 100%;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.12);
       text-align: center;
     }
 
@@ -108,6 +102,28 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 20px;
+    }
+
+    /* Section Divider & Titles */
+    .section-divider {
+      width: 80px;
+      height: 2px;
+      background: var(--gold-accent);
+      margin: 32px auto 20px;
+      border-radius: 2px;
+      opacity: 0.6;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold-text);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Cinzel', serif;
     }
 
     /* PIN Lock UI */
@@ -192,7 +208,7 @@
     .slider-container {
       position: relative;
       width: 100%;
-      height: 360px;
+      height: 380px;
       border-radius: 20px;
       overflow: hidden;
       margin: 20px 0;
@@ -235,15 +251,13 @@
       cursor: pointer;
       backdrop-filter: blur(4px);
       z-index: 2;
-      transition: background 0.3s;
     }
-
     .slider-btn.prev { left: 12px; }
     .slider-btn.next { right: 12px; }
 
     /* Audio Player Custom */
     .music-player {
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
       padding: 12px 16px;
@@ -286,11 +300,11 @@
 
     /* Message Box */
     .message-box {
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 16px;
-      padding: 20px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 18px;
+      padding: 22px;
       text-align: left;
-      line-height: 1.7;
+      line-height: 1.8;
       font-size: 0.95rem;
       color: #f1e4e1;
       border-left: 3px solid var(--gold-text);
@@ -299,70 +313,201 @@
 
     .sender-tag {
       text-align: right;
-      font-family: 'Cinzel', serif;
-      font-size: 0.9rem;
+      font-family: 'Sacramento', cursive;
+      font-size: 1.8rem;
       color: var(--gold-text);
-      margin-top: 12px;
-      font-style: italic;
+      margin-top: 10px;
     }
 
-    /* MINI GAME / INTERACTIVE SECTION */
-    .section-title {
-      font-size: 1.1rem;
-      font-weight: 600;
+    /* COUNTDOWN / COUNTER TIMER */
+    .timer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .timer-item {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--maroon-border);
+      border-radius: 14px;
+      padding: 12px 4px;
+      text-align: center;
+    }
+
+    .timer-num {
+      font-size: 1.25rem;
+      font-weight: 700;
       color: var(--gold-text);
-      margin: 28px 0 14px;
+    }
+
+    .timer-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    /* TIMELINE SECTION */
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+      text-align: left;
+      margin: 20px 0;
+      border-left: 2px solid var(--gold-text);
+    }
+
+    .tl-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding-left: 14px;
+    }
+
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold-text);
+      box-shadow: 0 0 10px var(--gold-text);
+    }
+
+    .tl-date {
+      font-size: 0.75rem;
+      color: var(--gold-text);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .tl-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin: 2px 0 4px;
+    }
+
+    .tl-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* BUCKET LIST CHECKLIST */
+    .checklist-box {
+      text-align: left;
+      background: rgba(0,0,0,0.25);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      cursor: pointer;
+    }
+
+    .check-item:last-child {
+      border-bottom: none;
+    }
+
+    .check-box-custom {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 2px solid var(--gold-text);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      transition: all 0.2s;
     }
 
-    /* Love Meter Game */
-    .game-box {
+    .check-item.done .check-box-custom {
+      background: var(--gold-text);
+      color: #1a0307;
+    }
+
+    .check-item.done span {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    /* VOUCHER / COUPONS SECTION */
+    .coupons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .coupon-card {
+      background: linear-gradient(135deg, rgba(80, 10, 22, 0.8) 0%, rgba(30, 3, 7, 0.9) 100%);
+      border: 1px dashed var(--gold-text);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+
+    .coupon-info h4 {
+      font-size: 0.95rem;
+      color: var(--gold-text);
+      margin-bottom: 2px;
+    }
+
+    .coupon-info p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .claim-btn {
+      background: var(--gold-accent);
+      color: #1a0307;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .claim-btn.claimed {
+      background: rgba(255,255,255,0.2);
+      color: var(--text-muted);
+      cursor: default;
+    }
+
+    /* REASONS GENERATOR */
+    .reason-box {
       background: rgba(0, 0, 0, 0.3);
       border: 1px solid var(--maroon-border);
-      border-radius: 20px;
+      border-radius: 18px;
       padding: 20px;
       margin-bottom: 24px;
     }
 
-    .meter-bar-bg {
-      width: 100%;
-      height: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      overflow: hidden;
-      margin: 14px 0;
-      position: relative;
+    .reason-text {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-light);
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
     }
 
-    .meter-bar-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #d4af37, #ff5252);
-      border-radius: 10px;
-      transition: width 1.5s cubic-bezier(0.1, 0.8, 0.3, 1);
-    }
-
-    .action-btn {
-      background: var(--gold-accent);
-      color: #1a0307;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 25px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .action-btn:active {
-      transform: scale(0.96);
-    }
-
-    /* Interactive Notes Cards */
+    /* OPEN WHEN / SECRET NOTES */
     .notes-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -383,7 +528,7 @@
       gap: 8px;
     }
 
-    .note-card:hover, .note-card.opened {
+    .note-card:hover {
       background: rgba(212, 175, 55, 0.15);
       border-color: var(--gold-text);
       transform: translateY(-3px);
@@ -399,14 +544,32 @@
       color: var(--text-light);
     }
 
-    /* Popup Modal for Notes */
+    /* Action Button General */
+    .action-btn {
+      background: var(--gold-accent);
+      color: #1a0307;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      transition: transform 0.2s;
+    }
+
+    .action-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* Popup Modal */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.82);
       backdrop-filter: blur(8px);
       z-index: 100;
       display: flex;
@@ -424,7 +587,7 @@
     }
 
     .modal-body {
-      background: #25050b;
+      background: #230409;
       border: 1px solid var(--gold-text);
       border-radius: 24px;
       padding: 24px;
@@ -447,12 +610,11 @@
       margin-bottom: 20px;
     }
 
-    /* Watermark */
     .watermark {
       font-size: 0.7rem;
       color: rgba(255, 255, 255, 0.3);
       letter-spacing: 1px;
-      margin-top: 10px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -470,7 +632,7 @@
   <main class="screen" id="pin-screen">
     <div class="glass-card">
       <i class="fa-solid fa-lock pin-icon"></i>
-      <p class="subtitle">Private Message</p>
+      <p class="subtitle">Private Access</p>
       <h1 class="title">Boyfriend Day</h1>
       <p style="font-size: 0.85rem; color: var(--text-muted);">Masukkan Passcode Rahasia</p>
 
@@ -500,11 +662,13 @@
     </div>
   </main>
 
-  <!-- SCREEN 2: MAIN CONTENT -->
+  <!-- SCREEN 2: MAIN CONTENT (LONG PAGE) -->
   <main class="screen hidden" id="main-screen">
     <div class="glass-card">
+      
+      <!-- Top Badge -->
       <div class="recipient-badge">
-        <i class="fa-solid fa-heart" style="margin-right: 6px;"></i> Special For Akbar
+        <i class="fa-solid fa-crown" style="margin-right: 6px;"></i> Special For Akbar
       </div>
       
       <p class="subtitle">National Boyfriend Day</p>
@@ -517,7 +681,7 @@
         </button>
         <div class="song-info">
           <div class="song-title">Shape of My Heart</div>
-          <div class="song-artist">Playing background track</div>
+          <div class="song-artist">Special Soundtrack</div>
         </div>
         <i class="fa-solid fa-music" style="color: var(--gold-text); opacity: 0.6;"></i>
       </div>
@@ -543,43 +707,91 @@
         <div class="sender-tag">— With love, Deandra</div>
       </div>
 
-      <!-- MINI GAME 1: LOVE COMPATIBILITY CALCULATOR -->
-      <div class="section-title">
-        <i class="fa-solid fa-gamepad"></i> Mini Game: Love Chemistry
-      </div>
-      <div class="game-box">
-        <p style="font-size: 0.85rem; color: var(--text-muted);">Cek seberapa cocok Deandra & Akbar hari ini!</p>
-        <div class="meter-bar-bg">
-          <div class="meter-bar-fill" id="meter-fill"></div>
-        </div>
-        <div id="meter-result" style="font-size: 1.1rem; font-weight: 700; color: var(--gold-text); margin-bottom: 12px; min-height: 24px;"></div>
-        <button class="action-btn" onclick="runLoveMeter()">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> Hitung Chemistry
-        </button>
+      <!-- 1. COUNTER TIMER -->
+      <div class="section-divider"></div>
+      <div class="section-title"><i class="fa-solid fa-hourglass-half"></i> Days of Happiness</div>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">Waktu yang sudah kita lewati bersama:</p>
+      <div class="timer-grid">
+        <div class="timer-item"><div class="timer-num" id="t-days">365</div><div class="timer-label">Hari</div></div>
+        <div class="timer-item"><div class="timer-num" id="t-hours">12</div><div class="timer-label">Jam</div></div>
+        <div class="timer-item"><div class="timer-num" id="t-mins">45</div><div class="timer-label">Menit</div></div>
+        <div class="timer-item"><div class="timer-num" id="t-secs">08</div><div class="timer-label">Detik</div></div>
       </div>
 
-      <!-- MINI GAME 2: OPEN WHEN / SECRET NOTES -->
-      <div class="section-title">
-        <i class="fa-solid fa-envelope-open-text"></i> Open When... (Pesan Rahasia)
+      <!-- 2. REASONS WHY I LOVE YOU GENERATOR -->
+      <div class="section-divider"></div>
+      <div class="section-title"><i class="fa-solid fa-quote-left"></i> Why You're Special</div>
+      <div class="reason-box">
+        <div class="reason-text" id="reason-display">"Klik tombol di bawah buat liat salah satu alasan kamu tuh spesial!"</div>
+        <button class="action-btn" onclick="generateReason()"><i class="fa-solid fa-shuffle"></i> Acak Alasan</button>
       </div>
-      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">Klik tiap kartu untuk membuka pesannya!</p>
-      
+
+      <!-- 3. MEMORY TIMELINE -->
+      <div class="section-divider"></div>
+      <div class="section-title"><i class="fa-solid fa-timeline"></i> Our Journey</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">First Chapter</div>
+          <div class="tl-title">Awal Pertama Kenal</div>
+          <div class="tl-desc">Momen pertama kali ngobrol dan ternyata langsung nyambung banget!</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Sweet Moment</div>
+          <div class="tl-title">Jalan / Hangout Bareng</div>
+          <div class="tl-desc">Setiap momen keliling kota dan cerita banyak hal ga pernah berasa membosankan.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Today</div>
+          <div class="tl-title">Boyfriend Day!</div>
+          <div class="tl-desc">Merayakan hari ini khusus buat kamu, orang paling favorit di hidup aku!</div>
+        </div>
+      </div>
+
+      <!-- 4. OPEN WHEN / SECRET NOTES -->
+      <div class="section-divider"></div>
+      <div class="section-title"><i class="fa-solid fa-envelope-open-text"></i> Open When...</div>
       <div class="notes-grid">
-        <div class="note-card" onclick="openNote('Lagi Kangen', 'Kalau lagi kangen, langsung telpon/chat aku ya! Ga usah dipendem-pendem. I miss you more! ❤️')">
-          <i class="fa-solid fa-heart-pulse"></i>
-          <p>Lagi Kangen</p>
+        <div class="note-card" onclick="openNote('Lagi Kangen', 'Kalau lagi kangen, langsung chat atau telpon ya! I miss you more! ❤️')">
+          <i class="fa-solid fa-heart-pulse"></i><p>Lagi Kangen</p>
         </div>
-        <div class="note-card" onclick="openNote('Lagi Capek', 'Istirahat dulu yaa. Kamu udah melakukan yang terbaik hari ini. Aku bangga banget sama kamu! ☕✨')">
-          <i class="fa-solid fa-mug-hot"></i>
-          <p>Lagi Capek</p>
+        <div class="note-card" onclick="openNote('Lagi Capek', 'Istirahat dulu yaa. Kamu udah hebat banget hari ini. Proud of you! ☕✨')">
+          <i class="fa-solid fa-mug-hot"></i><p>Lagi Capek</p>
         </div>
-        <div class="note-card" onclick="openNote('Lagi Butuh Support', 'Ingat ya, kamu ga sendirian. Apapun tantangannya, kita hadapin bareng-bareng. semangat terus ya! 💪🔥')">
-          <i class="fa-solid fa-star"></i>
-          <p>Butuh Support</p>
+        <div class="note-card" onclick="openNote('Butuh Support', 'Kamu pasti bisa! Apapun jalannya, aku bakal selalu dukung kamu. 💪🔥')">
+          <i class="fa-solid fa-star"></i><p>Butuh Support</p>
         </div>
-        <div class="note-card" onclick="openNote('Lagi Pengen Senyum', 'Tahukah kamu? Senyum kamu itu hal favorit aku di dunia ini. Jangan lupa senyum hari ini! 😊✨')">
-          <i class="fa-solid fa-face-smile-beam"></i>
-          <p>Pengen Senyum</p>
+        <div class="note-card" onclick="openNote('Lagi Pengen Senyum', 'Tahukah kamu? Senyuman kamu itu alasan utama hari aku jadi indah. 😊')">
+          <i class="fa-solid fa-face-smile-beam"></i><p>Pengen Senyum</p>
+        </div>
+      </div>
+
+      <!-- 5. BUCKET LIST CHECKLIST -->
+      <div class="section-divider"></div>
+      <div class="section-title"><i class="fa-solid fa-list-check"></i> Our Future Goals</div>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">Hal-hal yang harus kita lakukan bareng:</p>
+      <div class="checklist-box">
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box-custom"><i class="fa-solid fa-check"></i></div><span>Cobain Cafe/Kuliner Baru Bareng</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box-custom"><i class="fa-solid fa-check"></i></div><span>Nonton Konser Musik Favorit</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box-custom"><i class="fa-solid fa-check"></i></div><span>Late Night Drive Tanpa Tujuan</span></div>
+        <div class="check-item" onclick="toggleCheck(this)"><div class="check-box-custom"><i class="fa-solid fa-check"></i></div><span>Liburan / Roadtrip Bareng</span></div>
+      </div>
+
+      <!-- 6. COUPON REWARDS -->
+      <div class="section-divider"></div>
+      <div class="section-title"><i class="fa-solid fa-ticket"></i> Special Coupons</div>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">Voucher khusus buat Akbar (bisa diklaim kapan aja!):</p>
+      <div class="coupons-grid">
+        <div class="coupon-card">
+          <div class="coupon-info"><h4>Voucher Bebas Marah</h4><p>Berlaku untuk 1 hari penuh kebebasan!</p></div>
+          <button class="claim-btn" onclick="claimCoupon(this)">KLAIM</button>
+        </div>
+        <div class="coupon-card">
+          <div class="coupon-info"><h4>Voucher Ditraktir Boba/Kopi</h4><p>Bisa diklaim kapan aja pas lagi ngumpul.</p></div>
+          <button class="claim-btn" onclick="claimCoupon(this)">KLAIM</button>
+        </div>
+        <div class="coupon-card">
+          <div class="coupon-info"><h4>Voucher Free Warm Hug</h4><p>Unlimited hug kapan pun kamu butuh!</p></div>
+          <button class="claim-btn" onclick="claimCoupon(this)">KLAIM</button>
         </div>
       </div>
 
@@ -591,8 +803,8 @@
   <div class="modal-overlay" id="note-modal">
     <div class="modal-body">
       <h3 id="modal-title">Judul Pesan</h3>
-      <p id="modal-text">Isi pesan rahasia...</p>
-      <button class="action-btn" onclick="closeNote()">Tutup Pesan</button>
+      <p id="modal-text">Isi pesan...</p>
+      <button class="action-btn" onclick="closeNote()">Tutup</button>
     </div>
   </div>
 
@@ -604,35 +816,22 @@
     const audio = document.getElementById('bg-music');
     const playIcon = document.getElementById('play-icon');
 
-    // Keypad Functions
+    // Keypad Logic
     function pressKey(num) {
       if (currentPin.length < 4) {
         currentPin += num;
         updateDots();
-        if (currentPin.length === 4) {
-          checkPin();
-        }
+        if (currentPin.length === 4) checkPin();
       }
     }
-
-    function deleteKey() {
-      currentPin = currentPin.slice(0, -1);
-      updateDots();
-    }
-
-    function clearPin() {
-      currentPin = "";
-      updateDots();
-    }
+    function deleteKey() { currentPin = currentPin.slice(0, -1); updateDots(); }
+    function clearPin() { currentPin = ""; updateDots(); }
 
     function updateDots() {
       for (let i = 0; i < 4; i++) {
         const dot = document.getElementById(`dot-${i}`);
-        if (i < currentPin.length) {
-          dot.classList.add('filled');
-        } else {
-          dot.classList.remove('filled');
-        }
+        if (i < currentPin.length) dot.classList.add('filled');
+        else dot.classList.remove('filled');
       }
     }
 
@@ -640,25 +839,16 @@
       if (currentPin === CORRECT_PIN) {
         document.getElementById('pin-screen').classList.add('hidden');
         document.getElementById('main-screen').classList.remove('hidden');
-        
-        // Auto Play Audio
-        audio.play().then(() => {
-          playIcon.className = "fa-solid fa-pause";
-        }).catch(err => {
-          console.log("Autoplay blocked, user can play manually.");
-        });
-
+        audio.play().then(() => { playIcon.className = "fa-solid fa-pause"; }).catch(() => {});
       } else {
         const errorMsg = document.getElementById('error-msg');
         errorMsg.style.opacity = '1';
         clearPin();
-        setTimeout(() => {
-          errorMsg.style.opacity = '0';
-        }, 2000);
+        setTimeout(() => { errorMsg.style.opacity = '0'; }, 2000);
       }
     }
 
-    // Carousel Functions
+    // Carousel Logic
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.classList.remove('active');
@@ -672,9 +862,7 @@
     }
 
     setInterval(() => {
-      if (!document.getElementById('main-screen').classList.contains('hidden')) {
-        moveSlide(1);
-      }
+      if (!document.getElementById('main-screen').classList.contains('hidden')) moveSlide(1);
     }, 4000);
 
     // Audio Control
@@ -688,23 +876,21 @@
       }
     }
 
-    // Mini Game 1: Love Meter Logic
-    let meterTested = false;
-    function runLoveMeter() {
-      const fill = document.getElementById('meter-fill');
-      const result = document.getElementById('meter-result');
-      
-      fill.style.width = '0%';
-      result.innerText = "Menganalisis...";
+    // Reasons Generator Logic
+    const reasons = [
+      "Kamu selalu tahu cara bikin aku senyum bahkan saat hari lagi cape-capenya.",
+      "Sikap kamu yang sabar banget ngadepin aku.",
+      "Kamu pendengar yang baik untuk semua cerita random aku.",
+      "Cara kamu memperlakukan aku dengan selalu menghargai hal-hal kecil.",
+      "Kamu selalu jadi tempat aman aku buat cerita apa aja."
+    ];
 
-      setTimeout(() => {
-        // Selalu menghasilkan 99% - 1000% biar manis
-        fill.style.width = '100%';
-        result.innerText = "1000% Perfect Match! ❤️✨";
-      }, 300);
+    function generateReason() {
+      const random = reasons[Math.floor(Math.random() * reasons.length)];
+      document.getElementById('reason-display').innerText = `"${random}"`;
     }
 
-    // Mini Game 2: Open-When Modal Logic
+    // Modal Logic
     function openNote(title, text) {
       document.getElementById('modal-title').innerText = title;
       document.getElementById('modal-text').innerText = text;
@@ -714,6 +900,31 @@
     function closeNote() {
       document.getElementById('note-modal').classList.remove('active');
     }
+
+    // Checklist Logic
+    function toggleCheck(element) {
+      element.classList.toggle('done');
+    }
+
+    // Claim Coupon Logic
+    function claimCoupon(btn) {
+      btn.innerText = "TERKLAIM ✓";
+      btn.classList.add('claimed');
+      btn.onclick = null;
+    }
+
+    // Timer Counter (Dummy/Live Counter)
+    let seconds = 8, minutes = 45, hours = 12, days = 365;
+    setInterval(() => {
+      seconds++;
+      if(seconds >= 60) { seconds = 0; minutes++; }
+      if(minutes >= 60) { minutes = 0; hours++; }
+      
+      document.getElementById('t-days').innerText = days;
+      document.getElementById('t-hours').innerText = hours < 10 ? '0' + hours : hours;
+      document.getElementById('t-mins').innerText = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById('t-secs').innerText = seconds < 10 ? '0' + seconds : seconds;
+    }, 1000);
   </script>
 </body>
 </html>
